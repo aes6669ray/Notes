@@ -1,11 +1,9 @@
 #str代表是針對字串做運算的定義,replace代表把您好換成hello
 #contain你好,代表找出有包含你好的資料
-##import pandas as pd
-##data=pd.Series(['您好', '你好', '統神'])
 ##print(data.str.replace("您好","hello"))
 ##print(data.str.contains("你好"))
 
-
+#data.isna().sum() 找出data中的遺漏直
 
 #my_list.append(object)             ##利用append增加list
 #my_list.insert(position, object)   ##利用insert插入物件到特定位置
@@ -31,12 +29,12 @@
 ##整合資料的
 #import glob
 #all_data=glob.glob(".csv") 抓取所有資料包含csv並整合在all_data中可供抓取
-#
+#stocks=sorted(glob("*.csv"))
+#pd.concat((pd.read_csv(file) for file in stocks), ignore_index=True) 
 
-##陣列轉置，即[2,3]變[3,2]
-#data.T
-#data.ravel     ##把資料扁平，即把高維度資料變成一維陣列
-#data.reshape()   ##把資料重塑成指定維度陣列
+##縮減資料容量
+#data["column_name"]=data.column_name.astype("category", categories=["good","very good","excellent"], ordered=True) 
+#把object(通常是字體str)的資料型態轉成category,後半部代表讓電腦辨識分類,分類後可使用布林值判斷
 
 ##資料類別轉換
 #bins=[18,25,35,60,100]
