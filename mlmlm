@@ -26,3 +26,4 @@ Testing 的data要用training的資訊去做正規畫
 detrend模式 -scipy/savgol_filter
 
 用numpy設定random model 訓練後去嘗試套入
+test
