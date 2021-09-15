@@ -42,3 +42,9 @@
 #pd.cut(data,bins,labels=group_name)  ##bins代表切割的類別,會放list 如上述18-25為一類,25-35為另一類...
 #pd.qcut(data,4)    ##qcut代表按照百分比切割,後面數字代表切幾個組
 #cut.codes          ##利用codes查詢各個data被轉換成的類別,會給成array的樣子
+
+##資料整合
+#df1.combine_first(df2) ##df1的資料為優先，把df2的資料補進df1的空缺裡
+#pd.concat([df1,df2],axis=0,keys=["label"],join="inner")    ##join可以換outer變聯集
+#pd.merge([df1,df2],axis=0,how="inner",on=["variable"])     ##依照Variable來merge
+#pd.merge([df1,df2],left_on=["variable"],right_index=True)  ##row的方式merge資料
