@@ -48,3 +48,7 @@
 #pd.concat([df1,df2],axis=0,keys=["label"],join="inner")    ##join可以換outer變聯集
 #pd.merge([df1,df2],axis=0,how="inner",on=["variable"])     ##依照Variable來merge
 #pd.merge([df1,df2],left_on=["variable"],right_index=True)  ##row的方式merge資料
+
+##資料轉換
+##把其中一欄中的類別變項重新變成新的欄位加入進df
+#df.pivot(index="指定的index",columns="指定的欄位中類別變項",values="補入的資料")
