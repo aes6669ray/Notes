@@ -6,7 +6,8 @@ import pytest
 
 class TestOrganize:
     def setup_method(self):
-        pass
+        ##setup代表初始訊息，可以移並在這裡輸入需要用到的物件，接下來的測試函式只需打成self.物件名稱，即可使用
+        self.x="this"
 
     def test_move_folder(self):
         pass
