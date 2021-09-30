@@ -1,11 +1,3 @@
-SELECT o.CustomerID, e.EmployeeID, e.FirstName 
-FROM `orders` as o, `employees` as e
-WHERE o.EmployeeID = e.EmployeeID;
-
-SELECT * 
-FROM `products` as p, `orders` as o , `order details` as od
-WHERE o.OrderID = od.OrderID AND p.ProductID = od.ProductID;
-
 SELECT p.ProductName , e.LastName , o.ShipCountry , count(*) as times, sum(od.quantity*od.unitprice)
 FROM `products` as p, `orders` as o , `order details` as od, `employees` as e
 WHERE o.OrderID = od.OrderID AND p.ProductID = od.ProductID AND
