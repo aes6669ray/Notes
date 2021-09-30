@@ -1,0 +1,3 @@
+SELECT o.CustomerID, e.EmployeeID, e.FirstName 
+FROM `orders` as o, `employees` as e
+WHERE o.EmployeeID = e.EmployeeID;
