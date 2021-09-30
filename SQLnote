@@ -5,3 +5,10 @@ WHERE o.EmployeeID = e.EmployeeID;
 SELECT * 
 FROM `products` as p, `orders` as o , `order details` as od
 WHERE o.OrderID = od.OrderID AND p.ProductID = od.ProductID;
+
+SELECT p.ProductName , e.LastName , o.ShipCountry , count(*) as times
+FROM `products` as p, `orders` as o , `order details` as od, `employees` as e
+WHERE o.OrderID = od.OrderID AND p.ProductID = od.ProductID AND
+      e.EmployeeID = o.EmployeeID AND p.ProductName = "Tofu"
+GROUP BY o.ShipCountry,e.EmployeeID
+order by times;
