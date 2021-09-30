@@ -6,9 +6,18 @@ SELECT *
 FROM `products` as p, `orders` as o , `order details` as od
 WHERE o.OrderID = od.OrderID AND p.ProductID = od.ProductID;
 
-SELECT p.ProductName , e.LastName , o.ShipCountry , count(*) as times
+SELECT p.ProductName , e.LastName , o.ShipCountry , count(*) as times, sum(od.quantity*od.unitprice)
 FROM `products` as p, `orders` as o , `order details` as od, `employees` as e
 WHERE o.OrderID = od.OrderID AND p.ProductID = od.ProductID AND
       e.EmployeeID = o.EmployeeID AND p.ProductName = "Tofu"
 GROUP BY o.ShipCountry,e.EmployeeID
 order by times;
+
+
+#SELECT p.ProductName , e.LastName , count(*) as times, sum(od.quantity*od.unitprice) as my
+#FROM `products` as p, `orders` as o , `order details` as od, `employees` as e
+#WHERE o.OrderID = od.OrderID AND p.ProductID = od.ProductID AND
+#      e.EmployeeID = o.EmployeeID AND p.ProductName = "Tofu"
+#GROUP BY  o.EmployeeID
+#ORDER BY `my`  DESC;
+##少了group by o.ShipCountry 與select中的o.ShipCountry就可以看出哪個員工對於這個產品賣最好(而且是依照賺錢程度，不是賣的次數)
