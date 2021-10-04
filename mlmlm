@@ -9,23 +9,16 @@
     
 (3) 電影編碼    --9m
 
-Q:
-你們的預測能講的詳細一點或是具體是要拿什麼指標預測或判斷?
-
-1.數據處理
-    整合(是否會全部加起來還是因為要跑ML所以個別去CROSSVAILDFI),時間區隔,
-2.去趨勢化
-
-3.分析方式
-    動力系統模型=>震盪模型
-4.ML
-    Glm
 
 Testing 的data要用training的資訊去做正規畫
 
 detrend模式 -scipy/savgol_filter
 
 用numpy設定random model 訓練後去嘗試套入
-test
-test
+
+10/5報告
+這兩周的進度(fouier,bandpass,s-gfilter)
+未來進度(NN嘗試,找論文具體使用bandpass去過濾,measurementinterval)
+研討會
+TAship
 
