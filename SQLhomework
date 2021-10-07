@@ -40,3 +40,18 @@ SELECT COUNT(Discontinued) FROM `products`;
 10. Write a query to get Product list (name, units on order , units in stock) of stock is less than the quantity on order.
 SELECT `ProductName`,UnitsOnOrder,UnitsInStock,(p.UnitsOnOrder-p.UnitsInStock) as Number_of_lack FROM `products` as p
 WHERE UnitsOnOrder > UnitsInStock;
+
+加一成運費後,訂單大於五百元的訂單
+SELECT orderid,freight,(Freight*1.1) as myft FROM `orders` 
+WHERE Freight*1.1 >=500
+
+##GROUP BY跟HAVING搭配使用(HAVING效力等同於WHERE)
+SELECT `City`,COUNT(*) FROM `employees`
+GROUP BY City
+HAVING COUNT(*) <2;
+
+1996年客戶訂單
+SELECT c.customerid,o.orderdate,COUNT(*) as num FROM customers as c , orders as o 
+where c.customerid = o.customerid and YEAR(o.OrderDate) = "1996"
+GROUP by c.customerid
+HAVING num>0;
