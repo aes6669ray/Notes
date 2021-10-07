@@ -55,3 +55,17 @@ SELECT c.customerid,o.orderdate,COUNT(*) as num FROM customers as c , orders as 
 where c.customerid = o.customerid and YEAR(o.OrderDate) = "1996"
 GROUP by c.customerid
 HAVING num>0;
+
+終極大魔王
+SELECT c.customerid,o.orderdate,COUNT(*) as num ,
+sum(od.unitprice*od.quantity) as result,
+AVG(od.unitprice*od.quantity) as myavg
+
+FROM customers as c , orders as o, `order details` as od 
+
+where c.customerid = o.customerid 
+AND od.orderid=o.OrderID
+AND YEAR(o.OrderDate) = "1996"
+
+GROUP by c.customerid
+HAVING num>0;
